@@ -1,0 +1,8 @@
+tracker_type: bytetrack 
+track_high_thresh: 0.5    # 信心度高於 0.5 才視為同一個人
+track_low_thresh: 0.1
+new_track_thresh: 0.6
+track_buffer: 120         # 關鍵！這代表記憶 120 幀（約 4 秒），消失 4 秒內回來 ID 不變
+match_thresh: 0.8
+
+results = model.track(frame, persist=True, classes=0, tracker="custom_tracker.yaml", verbose=False)
